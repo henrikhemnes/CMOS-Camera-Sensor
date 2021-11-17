@@ -1,0 +1,188 @@
+$date
+	Fri Nov 12 13:00:34 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module PIXEL_ARRAY_tb $end
+$var reg 1 ! anaBias1 $end
+$var reg 1 " anaRamp $end
+$var reg 1 # anaReset $end
+$var reg 1 $ erase $end
+$var reg 1 % expose $end
+$scope module dut $end
+$var wire 1 ! anaBias1 $end
+$var wire 1 " anaRamp $end
+$var wire 1 # anaReset $end
+$var wire 1 $ erase $end
+$var wire 1 % expose $end
+$scope begin genblk1[0] $end
+$scope begin genblk2[0] $end
+$scope module pix $end
+$var wire 8 & DATA [7:0] $end
+$var wire 1 $ ERASE $end
+$var wire 1 % EXPOSE $end
+$var wire 1 " RAMP $end
+$var wire 1 ' READ $end
+$var wire 1 # RESET $end
+$var wire 1 ! VBN1 $end
+$var reg 1 ( cmp $end
+$var reg 8 ) p_data [7:0] $end
+$var real 1 * adc $end
+$var real 1 + dv_pixel $end
+$var real 1 , lsb $end
+$var real 1 - tmp $end
+$var real 1 . v_erase $end
+$upscope $end
+$upscope $end
+$scope begin genblk2[1] $end
+$scope module pix $end
+$var wire 8 / DATA [7:0] $end
+$var wire 1 $ ERASE $end
+$var wire 1 % EXPOSE $end
+$var wire 1 " RAMP $end
+$var wire 1 ' READ $end
+$var wire 1 # RESET $end
+$var wire 1 ! VBN1 $end
+$var reg 1 0 cmp $end
+$var reg 8 1 p_data [7:0] $end
+$var real 1 2 adc $end
+$var real 1 3 dv_pixel $end
+$var real 1 4 lsb $end
+$var real 1 5 tmp $end
+$var real 1 6 v_erase $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[1] $end
+$scope begin genblk2[0] $end
+$scope module pix $end
+$var wire 8 7 DATA [7:0] $end
+$var wire 1 $ ERASE $end
+$var wire 1 % EXPOSE $end
+$var wire 1 " RAMP $end
+$var wire 1 8 READ $end
+$var wire 1 # RESET $end
+$var wire 1 ! VBN1 $end
+$var reg 1 9 cmp $end
+$var reg 8 : p_data [7:0] $end
+$var real 1 ; adc $end
+$var real 1 < dv_pixel $end
+$var real 1 = lsb $end
+$var real 1 > tmp $end
+$var real 1 ? v_erase $end
+$upscope $end
+$upscope $end
+$scope begin genblk2[1] $end
+$scope module pix $end
+$var wire 8 @ DATA [7:0] $end
+$var wire 1 $ ERASE $end
+$var wire 1 % EXPOSE $end
+$var wire 1 " RAMP $end
+$var wire 1 8 READ $end
+$var wire 1 # RESET $end
+$var wire 1 ! VBN1 $end
+$var reg 1 A cmp $end
+$var reg 8 B p_data [7:0] $end
+$var real 1 C adc $end
+$var real 1 D dv_pixel $end
+$var real 1 E lsb $end
+$var real 1 F tmp $end
+$var real 1 G v_erase $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+r1.2 G
+r1.2 F
+r0.004705882352941176 E
+r0.6 D
+r0 C
+bz B
+0A
+bz @
+r1.2 ?
+r1.2 >
+r0.004705882352941176 =
+r0.6 <
+r0 ;
+bz :
+09
+08
+bz 7
+r1.2 6
+r1.2 5
+r0.004705882352941176 4
+r0.6 3
+r0 2
+bz 1
+00
+bz /
+r1.2 .
+r1.2 -
+r0.004705882352941176 ,
+r0.6 +
+r0 *
+bz )
+0(
+0'
+bz &
+0%
+1$
+1#
+0"
+x!
+$end
+#10000
+b0 )
+b0 1
+b0 :
+b0 B
+1%
+0$
+#410000
+0%
+#420000
+r0.004705882352941176 *
+r0.004705882352941176 2
+r0.004705882352941176 ;
+r0.004705882352941176 C
+1"
+#820000
+b0 &
+b0 /
+1'
+0"
+#840000
+bz )
+bz 1
+b0 7
+b0 @
+bz &
+bz /
+18
+0'
+#860000
+bz :
+bz B
+bz 7
+bz @
+08
+#870000
+r0 C
+b0 B
+r0 ;
+b0 :
+r0 2
+b0 1
+r0 *
+b0 )
+1$
+#880000

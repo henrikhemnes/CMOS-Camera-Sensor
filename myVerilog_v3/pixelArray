@@ -1,0 +1,637 @@
+#! /opt/eda/bin/vvp
+:ivl_version "11.0 (stable)" "(v11_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/eda/lib/ivl/system.vpi";
+:vpi_module "/opt/eda/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/eda/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/eda/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/eda/lib/ivl/va_math.vpi";
+:vpi_module "/opt/eda/lib/ivl/v2009.vpi";
+S_0x564394bcca00 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x564394bccb90 .scope module, "PIXEL_ARRAY_tb" "PIXEL_ARRAY_tb" 3 7;
+ .timescale -9 -12;
+P_0x564394bdb5b0 .param/l "h_pix" 0 3 8, +C4<00000000000000000000000000000010>;
+P_0x564394bdb5f0 .param/l "v_pix" 0 3 9, +C4<00000000000000000000000000000010>;
+RS_0x7fc59c65b018 .resolv tri, L_0x564394c03800, L_0x564394c038e0;
+L_0x564394bd6b40 .functor BUFZ 8, RS_0x7fc59c65b018, C4<00000000>, C4<00000000>, C4<00000000>;
+RS_0x7fc59c65b708 .resolv tri, L_0x564394c03aa0, L_0x564394c03b40;
+L_0x564394bd7220 .functor BUFZ 8, RS_0x7fc59c65b708, C4<00000000>, C4<00000000>, C4<00000000>;
+v0x564394c032c0_0 .var "anaBias1", 0 0;
+v0x564394c03380_0 .var "anaRamp", 0 0;
+v0x564394c03440_0 .var "anaReset", 0 0;
+v0x564394c034e0_0 .var "erase", 0 0;
+v0x564394c03580_0 .var "expose", 0 0;
+v0x564394c03620 .array "pixData", 0 1;
+v0x564394c03620_0 .net v0x564394c03620 0, 7 0, L_0x564394bd6b40; 1 drivers
+v0x564394c03620_1 .net v0x564394c03620 1, 7 0, L_0x564394bd7220; 1 drivers
+v0x564394c03700 .array "read", 0 1, 0 0;
+S_0x564394b8aef0 .scope module, "dut" "PIXEL_ARRAY" 3 17, 4 7 0, S_0x564394bccb90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "anaBias1";
+    .port_info 1 /INPUT 1 "anaRamp";
+    .port_info 2 /INPUT 1 "anaReset";
+    .port_info 3 /INPUT 1 "erase";
+    .port_info 4 /INPUT 1 "expose";
+    .port_info 5 /INPUT 2 "read";
+    .port_info 6 /OUTPUT 16 "pixData";
+P_0x564394b8ba80 .param/l "dv_pixel" 0 4 19, C4<00011011001010110>;
+P_0x564394b8bac0 .param/l "h_pix" 0 4 8, +C4<00000000000000000000000000000010>;
+P_0x564394b8bb00 .param/l "v_pix" 0 4 9, +C4<00000000000000000000000000000010>;
+v0x564394c02a50_0 .net "anaBias1", 0 0, v0x564394c032c0_0;  1 drivers
+v0x564394c02ba0_0 .net "anaRamp", 0 0, v0x564394c03380_0;  1 drivers
+v0x564394c02cf0_0 .net "anaReset", 0 0, v0x564394c03440_0;  1 drivers
+v0x564394c02e20_0 .net "erase", 0 0, v0x564394c034e0_0;  1 drivers
+v0x564394c02f50_0 .net "expose", 0 0, v0x564394c03580_0;  1 drivers
+v0x564394c03080 .array "pixData", 0 1;
+v0x564394c03080_0 .net8 v0x564394c03080 0, 7 0, RS_0x7fc59c65b018; 2 drivers
+v0x564394c03080_1 .net8 v0x564394c03080 1, 7 0, RS_0x7fc59c65b708; 2 drivers
+v0x564394c03700_0 .array/port v0x564394c03700, 0;
+v0x564394c03120 .array "read", 0 1;
+v0x564394c03120_0 .net v0x564394c03120 0, 0 0, v0x564394c03700_0; 1 drivers
+v0x564394c03700_1 .array/port v0x564394c03700, 1;
+v0x564394c03120_1 .net v0x564394c03120 1, 0 0, v0x564394c03700_1; 1 drivers
+S_0x564394bc8620 .scope generate, "genblk1[0]" "genblk1[0]" 4 25, 4 25 0, S_0x564394b8aef0;
+ .timescale 0 0;
+P_0x564394bc87b0 .param/l "i" 0 4 25, +C4<00>;
+S_0x564394bc8850 .scope generate, "genblk2[0]" "genblk2[0]" 4 26, 4 26 0, S_0x564394bc8620;
+ .timescale 0 0;
+P_0x564394bc8a30 .param/l "j" 0 4 26, +C4<00>;
+S_0x564394be0680 .scope module, "pix" "PIXEL_SENSOR" 4 27, 5 36 0, S_0x564394bc8850;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "VBN1";
+    .port_info 1 /INPUT 1 "RAMP";
+    .port_info 2 /INPUT 1 "RESET";
+    .port_info 3 /INPUT 1 "ERASE";
+    .port_info 4 /INPUT 1 "EXPOSE";
+    .port_info 5 /INPUT 1 "READ";
+    .port_info 6 /INOUT 8 "DATA";
+P_0x564394bc8a80 .param/l "dv_pixel_int" 0 5 51, C4<0110>;
+v0x564394bbfe50_0 .net8 "DATA", 7 0, RS_0x7fc59c65b018;  alias, 2 drivers
+v0x564394bc03e0_0 .net "ERASE", 0 0, v0x564394c034e0_0;  alias, 1 drivers
+v0x564394bc0a80_0 .net "EXPOSE", 0 0, v0x564394c03580_0;  alias, 1 drivers
+v0x564394bd82f0_0 .net "RAMP", 0 0, v0x564394c03380_0;  alias, 1 drivers
+v0x564394bc19c0_0 .net "READ", 0 0, v0x564394c03700_0;  alias, 1 drivers
+v0x564394bbef40_0 .net "RESET", 0 0, v0x564394c03440_0;  alias, 1 drivers
+v0x564394bbb690_0 .net "VBN1", 0 0, v0x564394c032c0_0;  alias, 1 drivers
+o0x7fc59c65b168 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0x564394bfe600_0 name=_ivl_0
+v0x564394bfe6e0_0 .var/real "adc", 0 0;
+v0x564394bfe7a0_0 .var "cmp", 0 0;
+v0x564394bfe860_0 .var/real "dv_pixel", 0 0;
+v0x564394bfe920_0 .var/real "lsb", 0 0;
+v0x564394bfe9e0_0 .var "p_data", 7 0;
+v0x564394bfeac0_0 .var/real "tmp", 0 0;
+v0x564394bfeb80_0 .var/real "v_erase", 0 0;
+E_0x564394bc9200 .event edge, v0x564394bfe7a0_0, v0x564394bbfe50_0;
+E_0x564394bae050 .event posedge, v0x564394bd82f0_0;
+E_0x564394bdfdf0 .event posedge, v0x564394bbb690_0;
+E_0x564394bdfdb0 .event edge, v0x564394bc03e0_0;
+L_0x564394c03800 .functor MUXZ 8, o0x7fc59c65b168, v0x564394bfe9e0_0, v0x564394c03700_0, C4<>;
+S_0x564394bfed60 .scope generate, "genblk2[1]" "genblk2[1]" 4 26, 4 26 0, S_0x564394bc8620;
+ .timescale 0 0;
+P_0x564394bfef30 .param/l "j" 0 4 26, +C4<01>;
+S_0x564394bfeff0 .scope module, "pix" "PIXEL_SENSOR" 4 27, 5 36 0, S_0x564394bfed60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "VBN1";
+    .port_info 1 /INPUT 1 "RAMP";
+    .port_info 2 /INPUT 1 "RESET";
+    .port_info 3 /INPUT 1 "ERASE";
+    .port_info 4 /INPUT 1 "EXPOSE";
+    .port_info 5 /INPUT 1 "READ";
+    .port_info 6 /INOUT 8 "DATA";
+P_0x564394bff1d0 .param/l "dv_pixel_int" 0 5 51, C4<0110>;
+v0x564394bff3c0_0 .net8 "DATA", 7 0, RS_0x7fc59c65b018;  alias, 2 drivers
+v0x564394bff4a0_0 .net "ERASE", 0 0, v0x564394c034e0_0;  alias, 1 drivers
+v0x564394bff540_0 .net "EXPOSE", 0 0, v0x564394c03580_0;  alias, 1 drivers
+v0x564394bff5e0_0 .net "RAMP", 0 0, v0x564394c03380_0;  alias, 1 drivers
+v0x564394bff680_0 .net "READ", 0 0, v0x564394c03700_0;  alias, 1 drivers
+v0x564394bff770_0 .net "RESET", 0 0, v0x564394c03440_0;  alias, 1 drivers
+v0x564394bff810_0 .net "VBN1", 0 0, v0x564394c032c0_0;  alias, 1 drivers
+o0x7fc59c65b438 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0x564394bff8b0_0 name=_ivl_0
+v0x564394bff950_0 .var/real "adc", 0 0;
+v0x564394bffa80_0 .var "cmp", 0 0;
+v0x564394bffb20_0 .var/real "dv_pixel", 0 0;
+v0x564394bffbc0_0 .var/real "lsb", 0 0;
+v0x564394bffc60_0 .var "p_data", 7 0;
+v0x564394bffd00_0 .var/real "tmp", 0 0;
+v0x564394bffdc0_0 .var/real "v_erase", 0 0;
+E_0x564394bff360 .event edge, v0x564394bffa80_0, v0x564394bbfe50_0;
+L_0x564394c038e0 .functor MUXZ 8, o0x7fc59c65b438, v0x564394bffc60_0, v0x564394c03700_0, C4<>;
+S_0x564394bfffa0 .scope generate, "genblk1[1]" "genblk1[1]" 4 25, 4 25 0, S_0x564394b8aef0;
+ .timescale 0 0;
+P_0x564394c00170 .param/l "i" 0 4 25, +C4<01>;
+S_0x564394c00230 .scope generate, "genblk2[0]" "genblk2[0]" 4 26, 4 26 0, S_0x564394bfffa0;
+ .timescale 0 0;
+P_0x564394c00430 .param/l "j" 0 4 26, +C4<00>;
+S_0x564394c00510 .scope module, "pix" "PIXEL_SENSOR" 4 27, 5 36 0, S_0x564394c00230;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "VBN1";
+    .port_info 1 /INPUT 1 "RAMP";
+    .port_info 2 /INPUT 1 "RESET";
+    .port_info 3 /INPUT 1 "ERASE";
+    .port_info 4 /INPUT 1 "EXPOSE";
+    .port_info 5 /INPUT 1 "READ";
+    .port_info 6 /INOUT 8 "DATA";
+P_0x564394c006f0 .param/l "dv_pixel_int" 0 5 51, C4<0110>;
+v0x564394c008e0_0 .net8 "DATA", 7 0, RS_0x7fc59c65b708;  alias, 2 drivers
+v0x564394c009e0_0 .net "ERASE", 0 0, v0x564394c034e0_0;  alias, 1 drivers
+v0x564394c00af0_0 .net "EXPOSE", 0 0, v0x564394c03580_0;  alias, 1 drivers
+v0x564394c00be0_0 .net "RAMP", 0 0, v0x564394c03380_0;  alias, 1 drivers
+v0x564394c00cd0_0 .net "READ", 0 0, v0x564394c03700_1;  alias, 1 drivers
+v0x564394c00dc0_0 .net "RESET", 0 0, v0x564394c03440_0;  alias, 1 drivers
+v0x564394c00eb0_0 .net "VBN1", 0 0, v0x564394c032c0_0;  alias, 1 drivers
+o0x7fc59c65b768 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0x564394c00fa0_0 name=_ivl_0
+v0x564394c01060_0 .var/real "adc", 0 0;
+v0x564394c011b0_0 .var "cmp", 0 0;
+v0x564394c01270_0 .var/real "dv_pixel", 0 0;
+v0x564394c01330_0 .var/real "lsb", 0 0;
+v0x564394c013f0_0 .var "p_data", 7 0;
+v0x564394c014d0_0 .var/real "tmp", 0 0;
+v0x564394c01590_0 .var/real "v_erase", 0 0;
+E_0x564394c00880 .event edge, v0x564394c011b0_0, v0x564394c008e0_0;
+L_0x564394c03aa0 .functor MUXZ 8, o0x7fc59c65b768, v0x564394c013f0_0, v0x564394c03700_1, C4<>;
+S_0x564394c01770 .scope generate, "genblk2[1]" "genblk2[1]" 4 26, 4 26 0, S_0x564394bfffa0;
+ .timescale 0 0;
+P_0x564394c01940 .param/l "j" 0 4 26, +C4<01>;
+S_0x564394c01a00 .scope module, "pix" "PIXEL_SENSOR" 4 27, 5 36 0, S_0x564394c01770;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "VBN1";
+    .port_info 1 /INPUT 1 "RAMP";
+    .port_info 2 /INPUT 1 "RESET";
+    .port_info 3 /INPUT 1 "ERASE";
+    .port_info 4 /INPUT 1 "EXPOSE";
+    .port_info 5 /INPUT 1 "READ";
+    .port_info 6 /INOUT 8 "DATA";
+P_0x564394c01be0 .param/l "dv_pixel_int" 0 5 51, C4<0110>;
+v0x564394c01dd0_0 .net8 "DATA", 7 0, RS_0x7fc59c65b708;  alias, 2 drivers
+v0x564394c01eb0_0 .net "ERASE", 0 0, v0x564394c034e0_0;  alias, 1 drivers
+v0x564394c01f50_0 .net "EXPOSE", 0 0, v0x564394c03580_0;  alias, 1 drivers
+v0x564394c01ff0_0 .net "RAMP", 0 0, v0x564394c03380_0;  alias, 1 drivers
+v0x564394c02090_0 .net "READ", 0 0, v0x564394c03700_1;  alias, 1 drivers
+v0x564394c02180_0 .net "RESET", 0 0, v0x564394c03440_0;  alias, 1 drivers
+v0x564394c02220_0 .net "VBN1", 0 0, v0x564394c032c0_0;  alias, 1 drivers
+o0x7fc59c65ba38 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0x564394c022c0_0 name=_ivl_0
+v0x564394c02360_0 .var/real "adc", 0 0;
+v0x564394c02490_0 .var "cmp", 0 0;
+v0x564394c02550_0 .var/real "dv_pixel", 0 0;
+v0x564394c02610_0 .var/real "lsb", 0 0;
+v0x564394c026d0_0 .var "p_data", 7 0;
+v0x564394c027b0_0 .var/real "tmp", 0 0;
+v0x564394c02870_0 .var/real "v_erase", 0 0;
+E_0x564394c01d70 .event edge, v0x564394c02490_0, v0x564394c008e0_0;
+L_0x564394c03b40 .functor MUXZ 8, o0x7fc59c65ba38, v0x564394c026d0_0, v0x564394c03700_1, C4<>;
+    .scope S_0x564394be0680;
+T_0 ;
+    %pushi/real 1288490188, 4066; load=1.20000
+    %pushi/real 3355443, 4044; load=1.20000
+    %add/wr;
+    %store/real v0x564394bfeb80_0;
+    %load/real v0x564394bfeb80_0;
+    %pushi/vec4 255, 0, 32;
+    %cvt/rv/s;
+    %div/wr;
+    %store/real v0x564394bfe920_0;
+    %pushi/real 1288490188, 4065; load=0.600000
+    %pushi/real 3355443, 4043; load=0.600000
+    %add/wr;
+    %store/real v0x564394bfe860_0;
+    %end;
+    .thread T_0, $init;
+    .scope S_0x564394be0680;
+T_1 ;
+    %wait E_0x564394bdfdb0;
+    %load/real v0x564394bfeb80_0;
+    %store/real v0x564394bfeac0_0;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x564394bfe9e0_0, 0, 8;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394bfe7a0_0, 0, 1;
+    %pushi/real 0, 4065; load=0.00000
+    %store/real v0x564394bfe6e0_0;
+    %jmp T_1;
+    .thread T_1, $push;
+    .scope S_0x564394be0680;
+T_2 ;
+    %wait E_0x564394bdfdf0;
+    %load/vec4 v0x564394bc0a80_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %load/real v0x564394bfeac0_0;
+    %load/real v0x564394bfe860_0;
+    %load/real v0x564394bfe920_0;
+    %mul/wr;
+    %sub/wr;
+    %store/real v0x564394bfeac0_0;
+T_2.0 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x564394be0680;
+T_3 ;
+    %wait E_0x564394bae050;
+    %load/real v0x564394bfe6e0_0;
+    %load/real v0x564394bfe920_0;
+    %add/wr;
+    %store/real v0x564394bfe6e0_0;
+    %load/real v0x564394bfeac0_0;
+    %load/real v0x564394bfe6e0_0;
+    %cmp/wr;
+    %jmp/0xz  T_3.0, 5;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x564394bfe7a0_0, 0;
+T_3.0 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x564394be0680;
+T_4 ;
+Ewait_0 .event/or E_0x564394bc9200, E_0x0;
+    %wait Ewait_0;
+    %load/vec4 v0x564394bfe7a0_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_4.0, 8;
+    %load/vec4 v0x564394bbfe50_0;
+    %store/vec4 v0x564394bfe9e0_0, 0, 8;
+T_4.0 ;
+    %jmp T_4;
+    .thread T_4, $push;
+    .scope S_0x564394bfeff0;
+T_5 ;
+    %pushi/real 1288490188, 4066; load=1.20000
+    %pushi/real 3355443, 4044; load=1.20000
+    %add/wr;
+    %store/real v0x564394bffdc0_0;
+    %load/real v0x564394bffdc0_0;
+    %pushi/vec4 255, 0, 32;
+    %cvt/rv/s;
+    %div/wr;
+    %store/real v0x564394bffbc0_0;
+    %pushi/real 1288490188, 4065; load=0.600000
+    %pushi/real 3355443, 4043; load=0.600000
+    %add/wr;
+    %store/real v0x564394bffb20_0;
+    %end;
+    .thread T_5, $init;
+    .scope S_0x564394bfeff0;
+T_6 ;
+    %wait E_0x564394bdfdb0;
+    %load/real v0x564394bffdc0_0;
+    %store/real v0x564394bffd00_0;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x564394bffc60_0, 0, 8;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394bffa80_0, 0, 1;
+    %pushi/real 0, 4065; load=0.00000
+    %store/real v0x564394bff950_0;
+    %jmp T_6;
+    .thread T_6, $push;
+    .scope S_0x564394bfeff0;
+T_7 ;
+    %wait E_0x564394bdfdf0;
+    %load/vec4 v0x564394bff540_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_7.0, 8;
+    %load/real v0x564394bffd00_0;
+    %load/real v0x564394bffb20_0;
+    %load/real v0x564394bffbc0_0;
+    %mul/wr;
+    %sub/wr;
+    %store/real v0x564394bffd00_0;
+T_7.0 ;
+    %jmp T_7;
+    .thread T_7;
+    .scope S_0x564394bfeff0;
+T_8 ;
+    %wait E_0x564394bae050;
+    %load/real v0x564394bff950_0;
+    %load/real v0x564394bffbc0_0;
+    %add/wr;
+    %store/real v0x564394bff950_0;
+    %load/real v0x564394bffd00_0;
+    %load/real v0x564394bff950_0;
+    %cmp/wr;
+    %jmp/0xz  T_8.0, 5;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x564394bffa80_0, 0;
+T_8.0 ;
+    %jmp T_8;
+    .thread T_8;
+    .scope S_0x564394bfeff0;
+T_9 ;
+Ewait_1 .event/or E_0x564394bff360, E_0x0;
+    %wait Ewait_1;
+    %load/vec4 v0x564394bffa80_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_9.0, 8;
+    %load/vec4 v0x564394bff3c0_0;
+    %store/vec4 v0x564394bffc60_0, 0, 8;
+T_9.0 ;
+    %jmp T_9;
+    .thread T_9, $push;
+    .scope S_0x564394c00510;
+T_10 ;
+    %pushi/real 1288490188, 4066; load=1.20000
+    %pushi/real 3355443, 4044; load=1.20000
+    %add/wr;
+    %store/real v0x564394c01590_0;
+    %load/real v0x564394c01590_0;
+    %pushi/vec4 255, 0, 32;
+    %cvt/rv/s;
+    %div/wr;
+    %store/real v0x564394c01330_0;
+    %pushi/real 1288490188, 4065; load=0.600000
+    %pushi/real 3355443, 4043; load=0.600000
+    %add/wr;
+    %store/real v0x564394c01270_0;
+    %end;
+    .thread T_10, $init;
+    .scope S_0x564394c00510;
+T_11 ;
+    %wait E_0x564394bdfdb0;
+    %load/real v0x564394c01590_0;
+    %store/real v0x564394c014d0_0;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x564394c013f0_0, 0, 8;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c011b0_0, 0, 1;
+    %pushi/real 0, 4065; load=0.00000
+    %store/real v0x564394c01060_0;
+    %jmp T_11;
+    .thread T_11, $push;
+    .scope S_0x564394c00510;
+T_12 ;
+    %wait E_0x564394bdfdf0;
+    %load/vec4 v0x564394c00af0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_12.0, 8;
+    %load/real v0x564394c014d0_0;
+    %load/real v0x564394c01270_0;
+    %load/real v0x564394c01330_0;
+    %mul/wr;
+    %sub/wr;
+    %store/real v0x564394c014d0_0;
+T_12.0 ;
+    %jmp T_12;
+    .thread T_12;
+    .scope S_0x564394c00510;
+T_13 ;
+    %wait E_0x564394bae050;
+    %load/real v0x564394c01060_0;
+    %load/real v0x564394c01330_0;
+    %add/wr;
+    %store/real v0x564394c01060_0;
+    %load/real v0x564394c014d0_0;
+    %load/real v0x564394c01060_0;
+    %cmp/wr;
+    %jmp/0xz  T_13.0, 5;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x564394c011b0_0, 0;
+T_13.0 ;
+    %jmp T_13;
+    .thread T_13;
+    .scope S_0x564394c00510;
+T_14 ;
+Ewait_2 .event/or E_0x564394c00880, E_0x0;
+    %wait Ewait_2;
+    %load/vec4 v0x564394c011b0_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_14.0, 8;
+    %load/vec4 v0x564394c008e0_0;
+    %store/vec4 v0x564394c013f0_0, 0, 8;
+T_14.0 ;
+    %jmp T_14;
+    .thread T_14, $push;
+    .scope S_0x564394c01a00;
+T_15 ;
+    %pushi/real 1288490188, 4066; load=1.20000
+    %pushi/real 3355443, 4044; load=1.20000
+    %add/wr;
+    %store/real v0x564394c02870_0;
+    %load/real v0x564394c02870_0;
+    %pushi/vec4 255, 0, 32;
+    %cvt/rv/s;
+    %div/wr;
+    %store/real v0x564394c02610_0;
+    %pushi/real 1288490188, 4065; load=0.600000
+    %pushi/real 3355443, 4043; load=0.600000
+    %add/wr;
+    %store/real v0x564394c02550_0;
+    %end;
+    .thread T_15, $init;
+    .scope S_0x564394c01a00;
+T_16 ;
+    %wait E_0x564394bdfdb0;
+    %load/real v0x564394c02870_0;
+    %store/real v0x564394c027b0_0;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x564394c026d0_0, 0, 8;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c02490_0, 0, 1;
+    %pushi/real 0, 4065; load=0.00000
+    %store/real v0x564394c02360_0;
+    %jmp T_16;
+    .thread T_16, $push;
+    .scope S_0x564394c01a00;
+T_17 ;
+    %wait E_0x564394bdfdf0;
+    %load/vec4 v0x564394c01f50_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_17.0, 8;
+    %load/real v0x564394c027b0_0;
+    %load/real v0x564394c02550_0;
+    %load/real v0x564394c02610_0;
+    %mul/wr;
+    %sub/wr;
+    %store/real v0x564394c027b0_0;
+T_17.0 ;
+    %jmp T_17;
+    .thread T_17;
+    .scope S_0x564394c01a00;
+T_18 ;
+    %wait E_0x564394bae050;
+    %load/real v0x564394c02360_0;
+    %load/real v0x564394c02610_0;
+    %add/wr;
+    %store/real v0x564394c02360_0;
+    %load/real v0x564394c027b0_0;
+    %load/real v0x564394c02360_0;
+    %cmp/wr;
+    %jmp/0xz  T_18.0, 5;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x564394c02490_0, 0;
+T_18.0 ;
+    %jmp T_18;
+    .thread T_18;
+    .scope S_0x564394c01a00;
+T_19 ;
+Ewait_3 .event/or E_0x564394c01d70, E_0x0;
+    %wait Ewait_3;
+    %load/vec4 v0x564394c02490_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_19.0, 8;
+    %load/vec4 v0x564394c01dd0_0;
+    %store/vec4 v0x564394c026d0_0, 0, 8;
+T_19.0 ;
+    %jmp T_19;
+    .thread T_19, $push;
+    .scope S_0x564394bccb90;
+T_20 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03440_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c034e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03440_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c034e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %delay 400000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03440_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c034e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03440_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c034e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03580_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %delay 400000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03440_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c034e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03380_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03440_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c034e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03440_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c034e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c03440_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564394c034e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03580_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564394c03380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x564394c03700, 4, 0;
+    %delay 10000, 0;
+    %end;
+    .thread T_20;
+    .scope S_0x564394bccb90;
+T_21 ;
+    %vpi_call/w 3 37 "$dumpfile", "pixelArray.vcd" {0 0 0};
+    %vpi_call/w 3 38 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x564394bccb90 {0 0 0};
+    %end;
+    .thread T_21;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "-";
+    "pixelArray_tb.v";
+    "pixelArray.v";
+    "pixelSensor.v";
