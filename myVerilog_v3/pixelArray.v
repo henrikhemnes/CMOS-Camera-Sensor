@@ -18,10 +18,9 @@ module PIXEL_ARRAY(
         for(i=0; i < vertical_pixels; i++) begin
             for(j=0; j < horizontal_pixels; j++) begin
                 PIXEL_SENSOR #(.dv_pixel(dv_pixel)) pix (.VBN1(anaBias1), .RAMP(anaRamp), .RESET(anaReset), .ERASE(erase),
-                 .EXPOSE(expose), .READ(read[j]), .DATA(pixData[i]));
+                 .EXPOSE(expose), .READ(read[i]), .DATA(pixData[j]));
             end
         end
     endgenerate
 
 endmodule
-
