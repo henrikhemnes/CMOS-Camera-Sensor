@@ -62,7 +62,7 @@ module pixelTop_tb;
       for(int i=0; i < horizontal_pixels; i++) begin
          readIsHigh = 0;
 
-         //check if read is high on every row
+         //check if read is high on any of the rows
          for(int j=0; j < vertical_pixels; j++) begin
             if(read[j]) begin
                readIsHigh = 1;
@@ -106,15 +106,16 @@ module pixelTop_tb;
       end
       else begin
          //We write out all the pixel values at each row to the terminal
-         for(int i=0; i < vertical_pixels; i++) begin
+         for(int i=vertical_pixels-1; i >= 0 ; i--) begin
             if(read[i]) begin
+               $display("Row %d: ", i);
                $display("----------------------");
                for(int j=0; j < horizontal_pixels; j++) begin
-                  pixelDataOut[i] <= pixData[j];
-                  $display("Pixel %d: %d", j, pixelDataOut[i]);
+                  pixelDataOut[j] <= pixData[j];
+                  $display("Pixel %d: %d", j, pixelDataOut[j]);
                end
                $display("======================");
-               $display("Row %d: ", i);
+               
             end
          end
       end
